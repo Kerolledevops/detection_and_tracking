@@ -1,4 +1,3 @@
-# yolov8-tracking-module
 
 # Real-time multi-object, segmentation and pose tracking using Yolov8 with DeepOCSORT and LightMBN
 
