@@ -20,7 +20,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
     cfg = SimpleNamespace(**cfg)  # easier dict acces by dot, instead of ['']
     
     if tracker_type == 'strongsort':
-        from boxmot.strongsort.strong_sort import StrongSORT
+        from trackers.strongsort.strong_sort import StrongSORT
         strongsort = StrongSORT(
             reid_weights,
             device,
@@ -38,7 +38,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
         return strongsort
     
     elif tracker_type == 'ocsort':
-        from boxmot.ocsort.ocsort import OCSort
+        from trackers.ocsort.ocsort import OCSort
         ocsort = OCSort(
             det_thresh=cfg.det_thresh,
             max_age=cfg.max_age,
@@ -52,7 +52,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
         return ocsort
     
     elif tracker_type == 'bytetrack':
-        from boxmot.bytetrack.byte_tracker import BYTETracker
+        from trackers.bytetrack.byte_tracker import BYTETracker
         bytetracker = BYTETracker(
             track_thresh=cfg.track_thresh,
             match_thresh=cfg.match_thresh,
@@ -62,7 +62,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
         return bytetracker
     
     elif tracker_type == 'botsort':
-        from boxmot.botsort.bot_sort import BoTSORT
+        from trackers.botsort.bot_sort import BoTSORT
         botsort = BoTSORT(
             reid_weights,
             device,
@@ -79,7 +79,7 @@ def create_tracker(tracker_type, tracker_config, reid_weights, device, half):
         )
         return botsort
     elif tracker_type == 'deepocsort':
-        from boxmot.deepocsort.ocsort import OCSort
+        from trackers.deepocsort.ocsort import OCSort
         deepocsort = OCSort(
             reid_weights,
             device,

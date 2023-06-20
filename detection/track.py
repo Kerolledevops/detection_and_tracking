@@ -11,7 +11,7 @@ from trackers.multi_trackers import create_tracker
 from trackers.utils import ROOT, WEIGHTS
 from trackers.utils.checks import TestRequirements
 from trackers.utils import logger as LOGGER
-from traceback.utils.torch_utils import select_device
+from trackers.utils.torch_utils import select_device
 
 tr = TestRequirements()
 tr.check_packages(('ultralytics',))  # install
